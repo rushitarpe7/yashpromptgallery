@@ -1,26 +1,130 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom palette colors */
+  --color-primary-light: var(--primary-light);
+  --color-accent-light: var(--accent-light);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* ── Custom Image Swatch Palette (Berry Rose & Deep Petrol Teal) ── */
+  --background: #FDF2F4;          /* Swatch 1: light blush rose background */
+  --foreground: #132528;          /* Swatch 5: deep teal charcoal text */
+
+  --card: #ffffff;
+  --card-foreground: #132528;
+
+  --popover: #ffffff;
+  --popover-foreground: #132528;
+
+  --primary: #C7495B;             /* Swatch 3: deep berry rose */
+  --primary-foreground: #ffffff;  /* white text on primary */
+  --primary-light: #E87A90;      /* Swatch 2: carnation rose pink for hover/badges */
+
+  --secondary: #0D525C;          /* Swatch 4: deep petrol teal */
+  --secondary-foreground: #ffffff;
+
+  --muted: #F8E7EA;
+  --muted-foreground: #5C6B6E;    /* soft slate teal for secondary text */
+
+  --accent: #0D525C;             /* Swatch 4: petrol teal accent */
+  --accent-foreground: #ffffff;
+  --accent-light: #F7DDE2;       /* soft blush accent fill */
+
+  --destructive: #dc2626;
+
+  --border: #F0CFD6;              /* gentle rose border */
+  --input: #FBEBED;
+  --ring: #C7495B;
+
+  --chart-1: #C7495B;
+  --chart-2: #0D525C;
+  --chart-3: #E87A90;
+  --chart-4: #F7DDE2;
+  --chart-5: #132528;
+
+  --radius: 0.75rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #132528;
+  --sidebar-primary: #C7495B;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #FDF2F4;
+  --sidebar-accent-foreground: #132528;
+  --sidebar-border: #F0CFD6;
+  --sidebar-ring: #C7495B;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom utility gradients matching the new swatch palette */
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(135deg, #C7495B 0%, #E87A90 45%, #0D525C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+  .gradient-soft {
+    background-image: linear-gradient(180deg, #FDF2F4 0%, #ffffff 100%);
+  }
 }

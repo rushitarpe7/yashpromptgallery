@@ -1,0 +1,32 @@
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+export function middleware(req: NextRequest) {
+  const { pathname } = req.nextUrl;
+
+  // Allow login page directly
+  if (pathname === "/admin/login") {
+    return NextResponse.next();
+  }
+
+  // Protect all other /admin routes
+  if (pathname.startsWith("/admin")) {
+    const sessionToken =
+      req.cookies.get("authjs.session-token")?.value ||
+      req.cookies.get("__Secure-authjs.session-token")?.value ||
+      req.cookies.get("next-auth.session-token")?.value ||
+      req.cookies.get("__Secure-next-auth.session-token")?.value;
+
+    if (!sessionToken) {
+      const loginUrl = new URL("/admin/login", req.nextUrl.origin);
+      loginUrl.searchParams.set("callbackUrl", pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: ["/admin/:path*"],
+};
