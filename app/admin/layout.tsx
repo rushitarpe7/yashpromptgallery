@@ -34,14 +34,14 @@ export default function AdminLayout({
       {/* Admin Header (only on dashboard and management pages) */}
       <header className="sticky top-0 z-50 w-full border-b border-primary-light/40 bg-primary text-white shadow-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4">
-            <Link href="/admin/dashboard" className="flex items-center gap-2.5 group">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-105">
+          <div className="flex items-center gap-4 min-w-0">
+            <Link href="/admin/dashboard" className="flex items-center gap-2.5 group min-w-0">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm transition-transform group-hover:scale-105">
                 <Sparkles className="h-5 w-5 text-white" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold tracking-tight text-white leading-tight">
-                  PromptGallery
+              <div className="flex flex-col min-w-0">
+                <span className="text-lg font-bold tracking-tight text-white leading-tight truncate">
+                  Yash's PromptGallery
                 </span>
                 <span className="text-[11px] font-semibold text-accent-light tracking-wider uppercase">
                   Admin Portal
@@ -50,25 +50,26 @@ export default function AdminLayout({
             </Link>
           </div>
 
-          <div className="flex items-center gap-3">
-            <Link href="/" target="_blank" rel="noreferrer">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-white hover:bg-white/20 hover:text-white gap-1.5"
-              >
-                <ExternalLink className="h-4 w-4" />
+          <div className="flex items-center gap-3 shrink-0">
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="text-white hover:bg-white/20 hover:text-white gap-1.5 whitespace-nowrap"
+            >
+              <Link href="/" target="_blank" rel="noreferrer">
+                <ExternalLink className="h-4 w-4 shrink-0" />
                 <span className="hidden sm:inline">Live Gallery</span>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
 
             <Button
               onClick={handleSignOut}
               variant="outline"
               size="sm"
-              className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary transition-all duration-200 gap-1.5"
+              className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary transition-all duration-200 gap-1.5 whitespace-nowrap"
             >
-              <LogOut className="h-4 w-4" />
+              <LogOut className="h-4 w-4 shrink-0" />
               <span>Sign Out</span>
             </Button>
           </div>
