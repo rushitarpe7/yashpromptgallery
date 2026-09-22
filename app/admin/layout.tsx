@@ -51,17 +51,16 @@ export default function AdminLayout({
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-white/20 hover:text-white gap-1.5 whitespace-nowrap"
-            >
-              <Link href="/" target="_blank" rel="noreferrer">
+            <Link href="/">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white hover:bg-white/20 hover:text-white gap-1.5 whitespace-nowrap"
+              >
                 <ExternalLink className="h-4 w-4 shrink-0" />
                 <span className="hidden sm:inline">Live Gallery</span>
-              </Link>
-            </Button>
+              </Button>
+            </Link>
 
             <Button
               onClick={handleSignOut}
