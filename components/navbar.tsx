@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Sparkles, Menu, X, LogIn } from "lucide-react";
+import { Sparkles, Menu, X, LogIn, LayoutDashboard, LogOut } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { signOut } from "next-auth/react";
 
-export function Navbar() {
+export function Navbar({ isLoggedIn }: { isLoggedIn?: boolean }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -44,7 +45,7 @@ export function Navbar() {
           >
             Gallery
           </Link>
-          {!isAdmin && (
+          {!isAdmin && !isLoggedIn && (
             <Link
               href="/admin/login"
               className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition-all duration-200"
@@ -52,6 +53,24 @@ export function Navbar() {
               <LogIn className="h-4 w-4" />
               Admin
             </Link>
+          )}
+          {!isAdmin && isLoggedIn && (
+            <>
+              <Link
+                href="/admin/dashboard"
+                className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition-all duration-200"
+              >
+                <LayoutDashboard className="h-4 w-4" />
+                Dashboard
+              </Link>
+              <button
+                onClick={() => signOut({ callbackUrl: "/" })}
+                className="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition-all duration-200"
+              >
+                <LogOut className="h-4 w-4" />
+                Sign Out
+              </button>
+            </>
           )}
         </nav>
 
@@ -85,7 +104,7 @@ export function Navbar() {
             >
               Gallery
             </Link>
-            {!isAdmin && (
+            {!isAdmin && !isLoggedIn && (
               <Link
                 href="/admin/login"
                 onClick={() => setMobileOpen(false)}
@@ -94,6 +113,28 @@ export function Navbar() {
                 <LogIn className="h-4 w-4" />
                 Admin
               </Link>
+            )}
+            {!isAdmin && isLoggedIn && (
+              <>
+                <Link
+                  href="/admin/dashboard"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+                >
+                  <LayoutDashboard className="h-4 w-4" />
+                  Dashboard
+                </Link>
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    signOut({ callbackUrl: "/" });
+                  }}
+                  className="flex items-center gap-2 w-full text-left rounded-xl px-4 py-2.5 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+                >
+                  <LogOut className="h-4 w-4" />
+                  Sign Out
+                </button>
+              </>
             )}
           </nav>
         </div>
