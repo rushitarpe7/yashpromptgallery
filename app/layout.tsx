@@ -11,11 +11,11 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Yash's PromptGallery — Curated AI Art & Image Prompts",
+  title: "Creative Yash's PromptGallery — Curated AI Art & Image Prompts",
   description:
     "Discover, browse, and copy high-quality AI prompts for Midjourney, DALL-E, Stable Diffusion, and more.",
   openGraph: {
-    title: "Yash's PromptGallery — Curated AI Art & Image Prompts",
+    title: "Creative Yash's PromptGallery — Curated AI Art & Image Prompts",
     description:
       "Discover, browse, and copy high-quality AI prompts for Midjourney, DALL-E, Stable Diffusion, and more.",
     type: "website",
@@ -36,10 +36,10 @@ export default function RootLayout({
           toastOptions={{
             style: {
               background: "#ffffff",
-              color: "#132528",
-              border: "1px solid #F0CFD6",
+              color: "#2B3034",
+              border: "1px solid #B9C7D2",
               borderRadius: "1rem",
-              boxShadow: "0 10px 25px -5px rgba(199, 73, 91, 0.15)",
+              boxShadow: "0 10px 25px -5px rgba(233, 60, 53, 0.15)",
             },
           }}
         />

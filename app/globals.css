@@ -54,52 +54,52 @@
 }
 
 :root {
-  /* ── Custom Image Swatch Palette (Berry Rose & Deep Petrol Teal) ── */
-  --background: #FDF2F4;          /* Swatch 1: light blush rose background */
-  --foreground: #132528;          /* Swatch 5: deep teal charcoal text */
+  /* ── Custom Color Palette ── */
+  --background: #ffffff;          
+  --foreground: #2B3034;          
 
   --card: #ffffff;
-  --card-foreground: #132528;
+  --card-foreground: #2B3034;
 
   --popover: #ffffff;
-  --popover-foreground: #132528;
+  --popover-foreground: #2B3034;
 
-  --primary: #C7495B;             /* Swatch 3: deep berry rose */
-  --primary-foreground: #ffffff;  /* white text on primary */
-  --primary-light: #E87A90;      /* Swatch 2: carnation rose pink for hover/badges */
+  --primary: #E93C35;             
+  --primary-foreground: #ffffff;  
+  --primary-light: #f87171;      
 
-  --secondary: #0D525C;          /* Swatch 4: deep petrol teal */
+  --secondary: #627C8C;          
   --secondary-foreground: #ffffff;
 
-  --muted: #F8E7EA;
-  --muted-foreground: #5C6B6E;    /* soft slate teal for secondary text */
+  --muted: #f1f5f9;
+  --muted-foreground: #989398;    
 
-  --accent: #0D525C;             /* Swatch 4: petrol teal accent */
+  --accent: #627C8C;             
   --accent-foreground: #ffffff;
-  --accent-light: #F7DDE2;       /* soft blush accent fill */
+  --accent-light: #B9C7D2;       
 
-  --destructive: #dc2626;
+  --destructive: #E93C35;
 
-  --border: #F0CFD6;              /* gentle rose border */
-  --input: #FBEBED;
-  --ring: #C7495B;
+  --border: #B9C7D2;              
+  --input: #f1f5f9;
+  --ring: #E93C35;
 
-  --chart-1: #C7495B;
-  --chart-2: #0D525C;
-  --chart-3: #E87A90;
-  --chart-4: #F7DDE2;
-  --chart-5: #132528;
+  --chart-1: #E93C35;
+  --chart-2: #627C8C;
+  --chart-3: #B9C7D2;
+  --chart-4: #989398;
+  --chart-5: #2B3034;
 
   --radius: 0.75rem;
 
   --sidebar: #ffffff;
-  --sidebar-foreground: #132528;
-  --sidebar-primary: #C7495B;
+  --sidebar-foreground: #2B3034;
+  --sidebar-primary: #E93C35;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #FDF2F4;
-  --sidebar-accent-foreground: #132528;
-  --sidebar-border: #F0CFD6;
-  --sidebar-ring: #C7495B;
+  --sidebar-accent: #B9C7D2;
+  --sidebar-accent-foreground: #2B3034;
+  --sidebar-border: #B9C7D2;
+  --sidebar-ring: #E93C35;
 }
 
 @layer base {
@@ -117,7 +117,7 @@
 /* Custom utility gradients matching the new swatch palette */
 @layer utilities {
   .text-gradient {
-    background-image: linear-gradient(135deg, #C7495B 0%, #E87A90 45%, #0D525C 100%);
+    background-image: linear-gradient(135deg, #E93C35 0%, #627C8C 45%, #2B3034 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -125,6 +125,6 @@
     display: inline-block;
   }
   .gradient-soft {
-    background-image: linear-gradient(180deg, #FDF2F4 0%, #ffffff 100%);
+    background-image: linear-gradient(180deg, #ffffff 0%, #B9C7D2 100%);
   }
 }

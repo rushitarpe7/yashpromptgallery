@@ -41,7 +41,7 @@ export default function AdminLayout({
               </div>
               <div className="flex flex-col min-w-0">
                 <span className="text-lg font-bold tracking-tight text-white leading-tight truncate">
-                  Yash's PromptGallery
+                  Creative Yash's PromptGallery
                 </span>
                 <span className="text-[11px] font-semibold text-accent-light tracking-wider uppercase">
                   Admin Portal

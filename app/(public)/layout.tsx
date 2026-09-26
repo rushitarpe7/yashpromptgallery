@@ -27,7 +27,7 @@ export default async function PublicLayout({
           </div>
           <div className="mt-12 flex flex-col items-center justify-between gap-4 sm:flex-row border-t border-slate-800 pt-8">
             <p className="text-sm text-slate-500">
-              © {new Date().getFullYear()} Yash's PromptGallery. Browse & copy AI prompts.
+              © {new Date().getFullYear()} Creative Yash's PromptGallery. Browse & copy AI prompts.
             </p>
             <p className="text-xs text-slate-600">
               Built with Next.js + shadcn/ui
