@@ -100,7 +100,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-accent-light to-accent/10 py-16 sm:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-white to-accent/10 py-16 sm:py-20">
         {/* Decorative blobs */}
         <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
@@ -113,7 +113,7 @@ export default function GalleryPage() {
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 via-white/50 to-accent/10 backdrop-blur-md px-5 py-2 text-sm font-bold text-primary mb-6 shadow-sm border border-primary/20 hover:border-primary/40 hover:bg-white/80 transition-all duration-300 hover:scale-105 hover:shadow-md cursor-default"
           >
             <Zap className="h-4 w-4 animate-pulse text-primary" />
-            <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+            <span className="font-semibold text-primary">
               🚀 The Ultimate AI Prompt Collection
             </span>
           </motion.div>
@@ -134,7 +134,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground"
+            className="mx-auto mt-4 max-w-2xl text-lg font-medium text-foreground/80"
           >
             Browse our curated collection of AI art prompts. Find the perfect prompt,
             copy it, and create stunning images with Midjourney, DALL·E, or Stable Diffusion.
