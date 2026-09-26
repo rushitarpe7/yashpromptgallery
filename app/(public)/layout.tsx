@@ -12,7 +12,7 @@ export default async function PublicLayout({
     <>
       <Navbar isLoggedIn={!!session} />
       <main className="flex-1">{children}</main>
-      <footer className="border-t border-slate-900 bg-slate-950">
+      <footer className="border-t border-slate-900 bg-[#2B3034]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
             Made by Ruhikesh Tarpe ❤️
